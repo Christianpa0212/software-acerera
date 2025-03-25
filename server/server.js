@@ -25,7 +25,7 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-//Rutas de prueba o principales (esto lo modularás después)
+//Rutas de prueba
 app.get('/api/ping', (req, res) => {
   res.json({ message: 'Servidor funcionando correctamente' });
 });
