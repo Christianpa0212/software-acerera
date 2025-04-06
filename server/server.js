@@ -6,7 +6,7 @@ const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
 
-// Importar la conexión a la base de datos
+//Importación de la base de datos
 require('./config/db/db');
 
 const app = express();
@@ -18,14 +18,14 @@ app.use(cors());
 app.use(morgan('dev'));  
 app.use(express.json()); 
 
-//Limita número de peticiones por IP (anti-bruteforce)
+//anti-bruteforce
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000,
   max: 100,
 });
 app.use(limiter);
 
-//Rutas de prueba o principales (esto lo modularás después)
+//Rutas de prueba o principales
 app.get('/api/ping', (req, res) => {
   res.json({ message: 'Servidor funcionando correctamente' });
 });

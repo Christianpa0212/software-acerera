@@ -19,4 +19,5 @@ pool.getConnection((err, connection) => {
   }
 });
 
-module.exports = pool.promise(); // Para usar async/await
+module.exports = pool.promise(); 
+
