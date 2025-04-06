@@ -5,6 +5,8 @@ const morgan = require('morgan');
 const helmet = require('helmet');
 const rateLimit = require('express-rate-limit');
 const xss = require('xss-clean');
+const adminRoutes = require('./routes/admin/adminRoutes');
+
 
 //Importación de la base de datos
 require('./config/db/db');
@@ -25,14 +27,9 @@ const limiter = rateLimit({
 });
 app.use(limiter);
 
-<<<<<<< HEAD
-//Rutas de prueba o principales
-=======
-//Rutas de prueba
->>>>>>> 9ea0c9a6f3f489beb78eafa2341be27450fd22c7
-app.get('/api/ping', (req, res) => {
-  res.json({ message: 'Servidor funcionando correctamente' });
-});
+
+//Rutas de admin
+app.use('/api/admin', adminRoutes);
 
 //Inicializa el servidor
 const PORT = process.env.PORT || 3000;

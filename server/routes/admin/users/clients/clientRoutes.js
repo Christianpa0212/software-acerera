@@ -1,8 +1,8 @@
 const express = require('express');
 const router = express.Router();
 
-const clientController = require('../../../controllers');
-const { isAdmin } = require('../middlewares/authMiddleware');
+const clientController = require('../../../../controllers/clients/clientControllers');
+const { isAdmin } = require('../../../../middlewares/authMiddleware');
 
 // GET - All clients
 router.get('/', isAdmin, clientController.getAllClients);
