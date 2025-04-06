@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const employeeController = require('../../../../controllers/employees/employeeControllers');
+const employeeController = require('../../../../controllers/admin/users/employees/employeeControllers');
 const { isAdmin } = require('../../../../middlewares/authMiddleware');
 
 // GET - Lista de empleados

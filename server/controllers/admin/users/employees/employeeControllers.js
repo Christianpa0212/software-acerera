@@ -1,5 +1,5 @@
-const runQuery = require('../../utils/queryHandler');
-const callProcedure = require('../../utils/procedureCaller');
+const runQuery = require('../../../../utils/queryHandler');
+const callProcedure = require('../../../../utils/procedureCaller');
 
 //Todos los empleados
 exports.getAllEmployees = (req, res) => {

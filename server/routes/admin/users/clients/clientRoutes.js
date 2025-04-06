@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const clientController = require('../../../../controllers/clients/clientControllers');
+const clientController = require('../../../../controllers/admin/users/clients/clientControllers');
 const { isAdmin } = require('../../../../middlewares/authMiddleware');
 
 // GET - All clients
