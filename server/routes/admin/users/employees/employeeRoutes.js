@@ -10,6 +10,9 @@ router.get('/', isAdmin, employeeController.getAllEmployees);
 // GET - Empleado por ID
 router.get('/:id', isAdmin, employeeController.getEmployeeById);
 
+// POSR - crear empleado
+router.post('/', isAdmin, employeeController.createEmployee);
+
 // PUT - Actualizar empleado
 router.put('/:id', isAdmin, employeeController.updateEmployee);
 

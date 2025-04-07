@@ -10,6 +10,9 @@ router.get('/', isAdmin, clientController.getAllClients);
 // GET - Cliente por ID
 router.get('/:id', isAdmin, clientController.getClientById);
 
+// POST - crear cliente
+router.get('/', isAdmin, clientController.createClient);
+
 // PUT - Actualizar cliente
 router.put('/:id', isAdmin, clientController.updateClient);
 

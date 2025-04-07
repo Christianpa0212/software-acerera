@@ -10,6 +10,9 @@ router.get('/', isAdmin, productController.getAllProducts);
 // GET - Producto por id
 router.get('/:id', isAdmin, productController.getProductById);
 
+//POST -crear producto
+router.post('/', isAdmin, productController.createProduct);
+
 // PUT - Actualizar producto
 router.put('/:id', isAdmin, productController.updateProduct);
 
