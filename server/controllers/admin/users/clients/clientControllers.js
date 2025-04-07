@@ -32,12 +32,12 @@ exports.updateClient = (req, res) => {
       agent_id, address, has_credit,
       credit_limit, credit_available
     ],
-    res,
+    res
   );
 };
 
 //Eliminar cliente
 exports.deleteClient = (req, res) => {
   const { id } = req.params;
-  callProcedure('CALL delete_cliente(?)', [id], res,);
+  callProcedure('CALL delete_cliente(?)', [id], res);
 };

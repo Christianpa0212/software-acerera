@@ -22,12 +22,12 @@ exports.updateEmployee = (req, res) => {
 
   callProcedure('CALL update_empleado(?, ?, ?, ?, ?, ?, ?, ?, ?)', 
     [id, first_name, paternal_name, maternal_name, phone_number, email, birth_date, role_id, branch_id],
-    res,
+    res
   );
 };
 
 //Eliminar empleados
 exports.deleteEmployee = (req, res) => {
   const { id } = req.params;
-  callProcedure('CALL delete_empleado(?)', [id], res,);
+  callProcedure('CALL delete_empleado(?)', [id], res);
 };

@@ -27,12 +27,12 @@ exports.updateProduct = (req, res) => {
   callProcedure(
     'CALL update_producto(?, ?, ?, ?, ?, ?)',
     [id, product_name, classification, caliber, measure, base_price_kg, description],
-    res,
+    res
   );
 };
 
 // DELETE - Eliminar producto
 exports.deleteProduct = (req, res) => {
   const { id } = req.params;
-  callProcedure('CALL delete_producto(?)', [id], res,);
+  callProcedure('CALL delete_producto(?)', [id], res);
 };
