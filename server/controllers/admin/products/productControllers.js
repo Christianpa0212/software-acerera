@@ -12,6 +12,31 @@ exports.getProductById = (req, res) => {
   runQuery('SELECT * FROM view_producto_detalle WHERE id_product = ?', [id], res, true);
 };
 
+// POST - Crear producto
+exports.createProduct = (req, res) => {
+  const {
+    product_name,
+    classification,
+    caliber,
+    measure,
+    base_price_kg,
+    description
+  } = req.body;
+
+  const sql = 'CALL create_producto(?, ?, ?, ?, ?, ?)';
+  const params = [
+    product_name,
+    classification,
+    caliber,
+    measure,
+    base_price_kg,
+    description
+  ];
+
+  callProcedure(sql, params, res);
+};
+
+
 // PUT - Actuallizar producto
 exports.updateProduct = (req, res) => {
   const { id } = req.params;

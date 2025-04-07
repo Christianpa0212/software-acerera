@@ -12,6 +12,44 @@ exports.getClientById = (req, res) => {
   runQuery('SELECT * FROM view_cliente_detalle WHERE id_client = ?', [id], res, true);
 };
 
+//Crear Cliente
+exports.createClient = (req, res) => {
+  const {
+    first_name,
+    paternal_name,
+    maternal_name,
+    phone_number,
+    email,
+    password,
+    birth_date,
+    client_type_id,
+    price_type_id,
+    agent_id,
+    address,
+    has_credit,
+    credit_limit
+  } = req.body;
+
+  const sql = 'CALL create_cliente(?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const params = [
+    first_name,
+    paternal_name,
+    maternal_name,
+    phone_number,
+    email,
+    password,
+    birth_date,
+    client_type_id,
+    price_type_id,
+    agent_id,
+    address,
+    has_credit,
+    credit_limit
+  ];
+
+  callProcedure(sql, params, res, 'Cliente registrado correctamente');
+};
+
 //Actualizar cliente
 exports.updateClient = (req, res) => {
   const { id } = req.params;

@@ -12,6 +12,36 @@ exports.getEmployeeById = (req, res) => {
   runQuery('SELECT * FROM view_empleado_detalle WHERE id_employee = ?', [id], res, true);
 };
 
+//Crear Empleado
+exports.createEmployee = (req, res) => {
+  const {
+    first_name,
+    paternal_name,
+    maternal_name,
+    phone_number,
+    email,
+    password,
+    birth_date,
+    role_id,
+    branch_id
+  } = req.body;
+
+  const sql = 'CALL create_empleado(?, ?, ?, ?, ?, ?, ?, ?, ?)';
+  const params = [
+    first_name,
+    paternal_name,
+    maternal_name,
+    phone_number,
+    email,
+    password,
+    birth_date,
+    role_id,
+    branch_id
+  ];
+
+  callProcedure(sql, params, res);
+};
+
 //Editar empleado
 exports.updateEmployee = (req, res) => {
   const { id } = req.params;
